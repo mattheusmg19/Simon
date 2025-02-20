@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Simon Tv</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+        .container iframe, img{
+            margin: 0;
+            height: 1080px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <iframe src="http://iissrvsob.sob.ad-grendene.com/simonweb/TV.aspx?tv=76" frameborder="0" id="simon"></iframe>
+        <img src="img/{73087D24-F9A3-43E7-9DEF-F58B15B61B4A}.png" alt="" id="img">
+    </div>
+    <script>
+        function scrollToElement(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+        function startScrolling() {
+            let currentElement = 'simon';
+            setInterval(() => {
+                currentElement = currentElement === 'simon' ? 'img' : 'simon';
+                scrollToElement(currentElement);
+            }, 60000);
+        }
+        window.onload = startScrolling;
+    </script>
+</body>
+</html>
